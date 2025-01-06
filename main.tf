@@ -196,7 +196,7 @@ resource "aws_db_subnet_group" "db_subnet_group" {
   subnet_ids = [
     aws_subnet.database[0].id,
     aws_subnet.database[1].id,
-    aws_subnet.database[2].id"
+    aws_subnet.database[2].id
   ]
 
   tags = {
