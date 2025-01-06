@@ -168,7 +168,7 @@ resource "aws_instance" "bastion" {
 resource "aws_security_group" "rds_sg" {
   name        = "slengpack-rds-sg"
   description = "Security Group for Slengpack RDS"
-  vpc_id      = "vpc-048fb44e46b252393"
+  vpc_id      = aws_vpc.main.id
 
   ingress {
     from_port   = 3306
@@ -259,6 +259,10 @@ output "created_bastion_sg_id" {
 
 output "bastion_instance_ip" {
     value = aws_instance.bastion.public_ip
+}
+
+output "created_rds_sg_id" {
+    value = aws_security_group.rds_sg.id
 }
 
 output "rds_endpoint" {
