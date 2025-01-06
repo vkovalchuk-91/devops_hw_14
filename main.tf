@@ -232,7 +232,7 @@ resource "aws_db_instance" "slengpack_rds" {
   storage_type                          = "gp2"
   engine                                = "mysql"
   engine_version                        = "8.0"
-  instance_class                        = "db.t3.micro"
+  instance_class                        = "db.t3.medium"
   username                              = "admin"
   password                              = "StrongPassword123!"
   db_subnet_group_name                  = aws_db_subnet_group.db_subnet_group.name
